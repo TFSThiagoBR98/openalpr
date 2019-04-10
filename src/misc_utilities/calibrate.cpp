@@ -230,7 +230,7 @@ void initialize_variables()
 
 void create_window()
 {
-  namedWindow(WINDOW_NAME, CV_WINDOW_AUTOSIZE | CV_WINDOW_KEEPRATIO | CV_GUI_EXPANDED);
+  namedWindow(WINDOW_NAME, cv::WINDOW_AUTOSIZE | cv::WINDOW_KEEPRATIO | cv::WINDOW_GUI_EXPANDED);
   
   value = round(-(rotationx * 20000.0) + 100);
   createTrackbar( "X", WINDOW_NAME, &value, 200,  XChange);
@@ -401,7 +401,7 @@ int main(int argc, char** argv) {
   
   drawImage(imgOriginal);
 
-  while (cvGetWindowHandle(WINDOW_NAME.c_str()) != 0)
+  /*while (getWindowImageRect(WINDOW_NAME.c_str()) != 0)
   {
 
     char c = waitKey(15);
@@ -417,7 +417,7 @@ int main(int argc, char** argv) {
 
   }
 
-  cvDestroyAllWindows();
+  destroyAllWindows();*/
   
   
   return 0;
